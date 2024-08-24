@@ -1,6 +1,10 @@
 from flask import Flask,request,render_template
 app = Flask(__name__)
 
+@app.route('/'):
+def welcome():
+    return 'Welcome'
+
 @app.route('/square',methods=['GET','POST'])
 def square():
     if request.method=="POST":
